@@ -1442,37 +1442,69 @@ endif
 
 call s:unmapKeys()
 
+let g:XMLMatchesA = '<LocalLeader>5'
+let g:XMLMatchesVisual = '<LocalLeader>5'
+let g:XMLMatchesB = '<LocalLeader>%'
+let g:XMLMatchesC = '<LocalLeader>%'
+let g:XMLChange = '<LocalLeader>c'
+let g:XMLChangeWhole = '<LocalLeader>C'
+let g:XMLDelete = '<LocalLeader>d'
+let g:XMLDeleteSection = '<LocalLeader>D'
+let g:XMLEnd = '<LocalLeader>e'
+let g:XMLDeleteComment = '<LocalLeader>]'
+let g:XMLDeleteCommentSection = '<LocalLeader>}'
+let g:XMLFoldTag = '<LocalLeader>f'
+let g:XMLFoldTagAll = '<LocalLeader>F'
+let g:XMLFormatTag = '<LocalLeader>g'
+let g:XMLFormatTagAll = '<LocalLeader>G'
+let g:XMLIndentAll = '<LocalLeader>I'
+let g:XMLJoin = '<LocalLeader>j'
+let g:XMLBeforeTag = '<LocalLeader>O'
+let g:XMLCommentTag = '<LocalLeader>='
+let g:XMLAfterTag= '<LocalLeader>o'
+let g:XMLStartTag = '<LocalLeader>s'
+let g:XMLDelCData = '<LocalLeader>['
+let g:XMLDelCDataSection = '<LocalLeader>{'
+let g:XMLShiftRight = '<LocalLeader>>'
+let g:XMLShiftLeft = '<LocalLeader><'
+let g:XMLvlistitem = '<LocalLeader>l'
+let g:XMLBlockTagA = '<LocalLeader>v'
+let g:XMLBlockTagB = '<LocalLeader>V'
+let g:XMLBlockWithCDATA = '<LocalLeader>c'
+let g:XMLBlockWithHTML = '<LocalLeader><'
+
+
   " Mappings of keys to functions                                         {{{2
-  call <SID>mapKey('n', '<LocalLeader>5', ':call <SID>Matches()<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>5', '<Esc>:call <SID>MatchesVisual()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>%', ':call <SID>Matches()<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>%', '<Esc>:call <SID>MatchesVisual()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>c', ':call <SID>Change()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>C', ':call <SID>ChangeWholeTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>d', ':call <SID>Delete()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>D', ':call <SID>DeleteSection()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>e', ':call <SID>EndTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>]', ':call <SID>DelComment()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>}', ':call <SID>DelCommentSection()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>f', ':call <SID>FoldTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>F', ':call <SID>FoldTagAll()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>g', ':call <SID>FormatTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>G', ':call <SID>FormatTagAll()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>I', ':call <SID>IndentAll()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>j', ':call <SID>Join()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>O', ':call <SID>BeforeTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>=', ':call <SID>CommentTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>o', ':call <SID>AfterTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>s', ':call <SID>StartTag()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>[', ':call <SID>DelCData()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>{', ':call <SID>DelCDataSection()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader>>', ':call <SID>ShiftRight()<Cr>')
-  call <SID>mapKey('n', '<LocalLeader><', ':call <SID>ShiftLeft()<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>l', '<Esc>:call <SID>vlistitem()<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>v', '<Esc>:call <SID>BlockTag(0)<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>V', '<Esc>:call <SID>BlockTag(1)<Cr>')
-  call <SID>mapKey('v', '<LocalLeader>c', '<Esc>:call <SID>BlockWith("<![CDATA[","]]>")<Cr>')
-  call <SID>mapKey('v', '<LocalLeader><', '<Esc>:call <SID>BlockWith("<!--","-->")<Cr>')
+  call <SID>mapKey('n', g:XMLMatchesA, ':call <SID>Matches()<Cr>')
+  call <SID>mapKey('v', g:XMLMatchesVisual, '<Esc>:call <SID>MatchesVisual()<Cr>')
+  call <SID>mapKey('n', g:XMLMatchesB, ':call <SID>Matches()<Cr>')
+  call <SID>mapKey('v', g:XMLMatchesC, '<Esc>:call <SID>MatchesVisual()<Cr>')
+  call <SID>mapKey('n', g:XMLChange, ':call <SID>Change()<Cr>')
+  call <SID>mapKey('n', g:XMLChangeWhole, ':call <SID>ChangeWholeTag()<Cr>')
+  call <SID>mapKey('n', g:XMLDelete, ':call <SID>Delete()<Cr>')
+  call <SID>mapKey('n', g:XMLDeleteSection, ':call <SID>DeleteSection()<Cr>')
+  call <SID>mapKey('n', g:XMLEnd, ':call <SID>EndTag()<Cr>')
+  call <SID>mapKey('n', g:XMLDeleteComment, ':call <SID>DelComment()<Cr>')
+  call <SID>mapKey('n', g:XMLDeleteCommentSection, ':call <SID>DelCommentSection()<Cr>')
+  call <SID>mapKey('n', g:XMLFoldTag, ':call <SID>FoldTag()<Cr>')
+  call <SID>mapKey('n', g:XMLFoldTagAll, ':call <SID>FoldTagAll()<Cr>')
+  call <SID>mapKey('n', g:XMLFormatTag, ':call <SID>FormatTag()<Cr>')
+  call <SID>mapKey('n', g:XMLFormatTagAll, ':call <SID>FormatTagAll()<Cr>')
+  call <SID>mapKey('n', g:XMLIndentAll, ':call <SID>IndentAll()<Cr>')
+  call <SID>mapKey('n', g:XMLJoin, ':call <SID>Join()<Cr>')
+  call <SID>mapKey('n', g:XMLBeforeTag, ':call <SID>BeforeTag()<Cr>')
+  call <SID>mapKey('n', g:XMLCommentTag, ':call <SID>CommentTag()<Cr>')
+  call <SID>mapKey('n', g:XMLAfterTag, ':call <SID>AfterTag()<Cr>')
+  call <SID>mapKey('n', g:XMLStartTag, ':call <SID>StartTag()<Cr>')
+  call <SID>mapKey('n', g:XMLDelCData, ':call <SID>DelCData()<Cr>')
+  call <SID>mapKey('n', g:XMLDelCDataSection, ':call <SID>DelCDataSection()<Cr>')
+  call <SID>mapKey('n', g:XMLShiftRight, ':call <SID>ShiftRight()<Cr>')
+  call <SID>mapKey('n', g:XMLShiftLeft, ':call <SID>ShiftLeft()<Cr>')
+  call <SID>mapKey('v', g:XMLvlistitem, '<Esc>:call <SID>vlistitem()<Cr>')
+  call <SID>mapKey('v', g:XMLBlockTagA, '<Esc>:call <SID>BlockTag(0)<Cr>')
+  call <SID>mapKey('v', g:XMLBlockTagB, '<Esc>:call <SID>BlockTag(1)<Cr>')
+  call <SID>mapKey('v', g:XMLBlockWithCDATA, '<Esc>:call <SID>BlockWith("<![CDATA[","]]>")<Cr>')
+  call <SID>mapKey('v', g:XMLBlockWithHTML, '<Esc>:call <SID>BlockWith("<!--","-->")<Cr>')
 
   " Move around functions                                                 {{{2
   call <SID>mapKey('n', '[[', "m':call <SID>findOpenTag('bW')<CR>")
